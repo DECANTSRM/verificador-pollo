@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Pollo Auténtico – CBTA 181</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f4f0;
+    color: #1a1a1a;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .header {
+    background: #2e7d32;
+    color: white;
+    padding: 20px 20px 16px;
+    text-align: center;
+  }
+  .header-logo { font-size: 42px; display: block; margin-bottom: 4px; }
+  .header h1 { font-size: 21px; font-weight: 700; line-height: 1.2; }
+  .header .sub { font-size: 13px; opacity: .85; margin-top: 5px; font-style: italic; }
+  .badge {
+    display: inline-block;
+    background: #f9a825;
+    color: #1a1a1a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 8px;
+  }
+
+  .main { padding: 18px 16px 28px; max-width: 480px; margin: 0 auto; }
+
+  .sello {
+    background: #e8f5e9;
+    border: 3px solid #2e7d32;
+    border-radius: 14px;
+    text-align: center;
+    padding: 28px 20px 22px;
+    margin-bottom: 14px;
+    animation: pop .45s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes pop { from { opacity:0; transform:scale(.65); } to { opacity:1; transform:scale(1); } }
+
+  .sello-ico { font-size: 78px; display: block; margin-bottom: 8px; line-height: 1; }
+  .sello-titulo { font-size: 27px; font-weight: 900; color: #1b5e20; letter-spacing: -0.5px; line-height: 1.1; margin-bottom: 8px; }
+  .sello-lote {
+    display: inline-block;
+    background: #2e7d32;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+  .sello-msg { font-size: 15px; color: #1b5e20; line-height: 1.5; }
+
+  .datos {
+    background: white;
+    border-radius: 14px;
+    padding: 18px 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.07);
+    margin-bottom: 14px;
+  }
+  .datos-tit {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2e7d32;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    border-bottom: 2px solid #e8f5e9;
+    padding-bottom: 9px;
+    margin-bottom: 12px;
+  }
+  .dato { display: flex; align-items: flex-start; gap: 12px; padding: 9px 0; border-bottom: 1px solid #f2f2f2; }
+  .dato:last-child { border-bottom: none; }
+  .dato-ico { font-size: 21px; width: 26px; text-align: center; flex-shrink: 0; }
+  .dato-lbl { font-size: 11px; color: #777; font-weight: 600; text-transform: uppercase; letter-spacing: .4px; display: block; }
+  .dato-val { font-size: 17px; font-weight: 700; color: #1a1a1a; display: block; margin-top: 1px; }
+
+  .cert {
+    background: #2e7d32;
+    color: white;
+    border-radius: 8px;
+    padding: 13px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 12px;
+  }
+  .cert strong { display: block; font-size: 14px; margin-bottom: 3px; }
+
+  .footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 18px 16px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .footer-ico  { font-size: 28px; display: block; margin-bottom: 5px; }
+  .footer-bold { font-weight: 700; font-size: 13px; display: block; margin-bottom: 3px; }
+
+  .confeti { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:9999; overflow:hidden; }
+  .c { position:absolute; top:-20px; animation:caer linear forwards; }
+  @keyframes caer { to { transform:translateY(110vh) rotate(720deg); opacity:0; } }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <span class="header-logo">🍗</span>
+  <h1>Verificador de Autenticidad</h1>
+  <div class="sub">No te comas un pollo fake. Verifica aquí.</div>
+  <span class="badge">CBTA 181 – Tungareo, Michoacán</span>
+</header>
+
+<main class="main">
+
+  <div class="sello">
+    <span class="sello-ico">✅</span>
+    <div class="sello-titulo">¡POLLO AUTÉNTICO!</div>
+    <span class="sello-lote">LOTE: L-160426-01</span>
+    <p class="sello-msg">Este pollo es 100% natural. Sin sellos de advertencia porque es carne real, no química. Criado con amor (y Purina) en Michoacán.</p>
+  </div>
+
+  <div class="datos">
+    <div class="datos-tit">📋 Trazabilidad Real</div>
+
+    <div class="dato">
+      <span class="dato-ico">📍</span>
+      <div>
+        <span class="dato-lbl">Origen</span>
+        <span class="dato-val">Tungareo, Michoacán</span>
+      </div>
+    </div>
+
+    <div class="dato">
+      <span class="dato-ico">🗓️</span>
+      <div>
+        <span class="dato-lbl">Fecha de Sacrificio</span>
+        <span class="dato-val">16 de abril de 2026</span>
+      </div>
+    </div>
+
+    <div class="dato">
+      <span class="dato-ico">📆</span>
+      <div>
+        <span class="dato-lbl">Consumo Preferente</span>
+        <span class="dato-val">26 de abril de 2026</span>
+      </div>
+    </div>
+
+    <div class="dato">
+      <span class="dato-ico">🔢</span>
+      <div>
+        <span class="dato-lbl">Número de Lote</span>
+        <span class="dato-val">L-160426-01</span>
+      </div>
+    </div>
+
+    <div class="dato">
+      <span class="dato-ico">🍗</span>
+      <div>
+        <span class="dato-lbl">Peso</span>
+        <span class="dato-val">2.0 kg</span>
+      </div>
+    </div>
+
+    <div class="dato">
+      <span class="dato-ico">🌽</span>
+      <div>
+        <span class="dato-lbl">Alimentación</span>
+        <span class="dato-val">Purina® ProPuesta Engorda</span>
+      </div>
+    </div>
+
+    <div class="dato">
+      <span class="dato-ico">🐔</span>
+      <div>
+        <span class="dato-lbl">Raza</span>
+        <span class="dato-val">Pollo Broiler</span>
+      </div>
+    </div>
+
+    <div class="cert">
+      <strong>🛡️ Certificado por CBTA 181</strong>
+      Pollo 100% natural · Sin hormonas artificiales · Sin sellos negros de advertencia · Alimentado con Purina (sí, ese que come alimento de verdad, no porquerías)
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <span class="footer-ico">🛡️</span>
+  <span class="footer-bold">Sello de Autenticidad – Si no valida, no lo compres</span>
+  Certificado por CBTA 181 – Tungareo, Michoacán
+</footer>
+
+<div class="confeti" id="cf"></div>
+
+<script>
+const cf = document.getElementById('cf');
+const cols = ['#2e7d32','#66bb6a','#f9a825','#ff7043','#42a5f5','#ffffff','#ffeb3b','#ab47bc'];
+for (let i = 0; i < 65; i++) {
+  const p = document.createElement('div');
+  p.className = 'c';
+  const s = 7 + Math.random() * 9;
+  p.style.cssText = `left:${Math.random()*100}vw;background:${cols[~~(Math.random()*cols.length)]};animation-duration:${1.5+Math.random()*2}s;animation-delay:${Math.random()*.8}s;width:${s}px;height:${s}px;border-radius:${Math.random()>.5?'50%':'2px'}`;
+  cf.appendChild(p);
+}
+setTimeout(() => cf.innerHTML = '', 4500);
+</script>
+</body>
+</html>
